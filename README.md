@@ -2,11 +2,13 @@
 
 A web application that lets people create healthy meal events to meet interesting people in small groups
 
+[Live Site @ https://lettuce-be-friends.herokuapp.com/](https://lettuce-be-friends.herokuapp.com/)
+
 ## Technical Specifications
 
 * Flask application using SQLAlchemy for database management
 	* Implmeneted CRUD on User and Event resources with RESTful routing
-* Templates built with Jinja2 and HTML, with styling using Bootstrap and raw CSS
+* Templates built with Jinja2 and HTML, with styling using Bootstrap and CSS
 * Password encryption done with Bcrypt
 
 ## Development Timeline
