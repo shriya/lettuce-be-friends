@@ -15,7 +15,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or "it's a secret"
 
 modus = Modus(app)
 bcrypt = Bcrypt(app)
-login_manager = LoginManager(app)
+# login_manager = LoginManager(app)
 db = SQLAlchemy(app)
 
 from project.users.views import users_blueprint
@@ -26,24 +26,24 @@ from project.users.models import User
 app.register_blueprint(users_blueprint, url_prefix='/users')
 # app.register_blueprint(events_blueprint, url_prefix='/users/<int:id>/events')
 
-@login_manager.user_loader
-def load_user(id):
-    return User.query.get(int(id))
+# @login_manager.user_loader
+# def load_user(id):
+#     return User.query.get(int(id))
 
-# @app.route('/')
-# def root():
-#     return render_template('home.html')
+@app.route('/')
+def root():
+    return render_template('users/index.html')
 
-@app.after_request
-def add_header(r):
-    """
-    Add headers to both force latest IE rendering engine or Chrome Frame,
-    and also to cache the rendered page for 10 minutes.
-    """
-    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    r.headers["Pragma"] = "no-cache"
-    r.headers["Expires"] = "0"
-    r.headers['Cache-Control'] = 'public, max-age=0'
-    return r
+# @app.after_request
+# def add_header(r):
+#     """
+#     Add headers to both force latest IE rendering engine or Chrome Frame,
+#     and also to cache the rendered page for 10 minutes.
+#     """
+#     r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+#     r.headers["Pragma"] = "no-cache"
+#     r.headers["Expires"] = "0"
+#     r.headers['Cache-Control'] = 'public, max-age=0'
+#     return r
 
 
