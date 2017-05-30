@@ -1,0 +1,148 @@
+/*
+
+MAIN COLORS
+
+green = #66932C
+dark beige = #D2D5AA
+light beige = #EFEFE8
+deep brown = #2E2F25
+
+OTHER COLORS POSSIBLY
+
+whiteish = #F8F8F8
+deeper green = #3D581A
+
+FONTS
+
+heading = 'Diavlo'
+text = 'Source Sans Pro'
+
+*/
+
+@font-face {
+    font-family: 'Diavlo';
+    src: url('../fonts/Diavlo.otf');
+}
+
+/* SETTINGS FOR ALL CONTENT */
+
+body a {
+    color: #66932C;
+}
+
+.main-content {
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 20px;
+    padding: 20px;
+    margin: 20px;
+    color: #2E2F25;
+
+    /* ONLY FOR DEBUGGING */
+    width: 98%;
+    background-color: #D2D5AA;
+}
+
+h1, h2, h3 {
+    font-family: 'Diavlo', sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background-color: #EFEFE8;
+    margin-bottom: 0;
+}
+
+/* Center Brand */
+.my-nav .navbar-brand {
+  background: url(../images/lettuce-header.png) center / contain no-repeat;
+  width: 500px;
+  transform: translateX(-50%);
+  left: 50%;
+  padding: 20px;
+  position: absolute;
+}
+
+/* Center on mobile */
+@media only screen and (max-width : 768px){
+      .my-nav .navbar-brand {
+      padding: 0px;
+      transform: translateX(-50%);
+      left: 50%;
+      position: absolute;
+    }
+    .my-nav .navbar-brand>img {
+      height: 100%;
+      width: auto;
+      padding: 15px; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
