@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     profile_img_url = db.Column(db.Text)
     events = db.relationship('Event', backref='user', lazy='dynamic')
 
-    def __init__(self, first_name, last_name, email, password, phone_number='555-555-5555', facebook_url='https://www.facebook.com/', profile_img_url='http://i66.tinypic.com/206dboj.png'):
+    def __init__(self, first_name, last_name, email, password, phone_number='555-555-5555', facebook_url='https://www.facebook.com/', profile_img_url='http://i.imgur.com/C86jBp4.png'):
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
