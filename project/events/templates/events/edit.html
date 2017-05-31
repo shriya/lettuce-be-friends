@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit Event
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <h2 class="join-message">Create Event</h2>
+        <form action="{{ url_for('events.show', e_id = event.id, u_id = host.id) }}?_method=PATCH" method="POST">
+          {{ form.csrf_token }}
+
+        <p>
+        Date &amp; Time
+          {% if form.date.errors %}
+            {% for error in form.date.errors %}
+              <span class="text-danger">
+                {{ error }}
+              </span>
+            {% endfor %}
+          {% endif %}
+          {{ form.date(value = event.date.strftime('%d/%m at %H:%M'), class="form-control") }}
+        </p>
+
+        <p>
+        Location Name
+          {% if form.location_name.errors %}
+            {% for error in form.location_name.errors %}
+              <span class="text-danger">
+                {{ error }}
+              </span>
+            {% endfor %}
+          {% endif %}
+          {{ form.location_name(value = event.location_name, class="form-control") }}
+        </p>
+
+        <p>
+        Location Address
+          {% if form.location_address.errors %}
+            {% for error in form.location_address.errors %}
+              <span class="text-danger">
+                {{ error }}
+              </span>
+            {% endfor %}
+          {% endif %}
+          {{ form.location_address(value = event.location_address, class="form-control") }}
+        </p>
+
+          <button type="submit" class="btn btn-default nav-signup">Update Event</button>
+          <br>
+          <br>
+            <form method="POST" action="{{url_for('events.show', u_id=host.id, e_id=event.id)}}?_method=DELETE">
+                <input class="btn btn-danger delete-btn" type="submit" value="Delete this event">    
+            </form>
+          <br>
+            <a class="btn btn-default view-all-btn" href="{{url_for('events.index', u_id=host.id)}}">See all of {{host.first_name}}'s events</a>
+        </form>
+
+      </div>
+    </div>
+
+
+
+{% endblock %}

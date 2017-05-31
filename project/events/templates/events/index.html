@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{host.first_name}}'s Events
+{% endblock %}
+
+{% block content %}
+    <h1>Check Out {{host.first_name}}'s Events</h1>
+
+    <div class="row">
+        {% for event in events %}
+            <div class="col-sm-3 event-card">
+                <div class="event-host">
+                    <img src="{{ event.host.profile_img_url }}" alt="Profile Picture" class="img-responsive event-host-pic">
+                    <h4>{{ event.host.first_name }}</h4>
+                </div>
+                <h3 class="event-title">{{ event.date.strftime('%d/%m at %H:%M') }}</h3>
+                <h4 class="event-venue">{{ event.location_name }}</h4>
+                <h5 class="event-address">{{ event.location_address }}</h5>
+                <button class="btn btn-default"><a href="{{url_for('events.show', event=event, u_id=host.id, e_id=event.id)}}">Attend</a></button>
+                <button class="btn btn-default"><a href="{{url_for('events.edit', u_id=host.id, e_id=event.id)}}">Edit Event</a></button>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -23,27 +23,29 @@ A web application that lets people create healthy meal events to meet interestin
 
 #### Wednesday May 31
 
-* Set up second resource Events with its RESTful routes 
 * Set up user log in & signup & log out **_(done)_**
+* Set up second resource Events with its RESTful routes 
 * Attendees list on Events objects (1:M relationship)
-* Create a way for attendees to sign up for each event and stop them once event is full
-* Convert CSS to SCSS
-* Make layout with Flexbox rather than just 12 col grid
-* Add CSS animations & transitions for event display and buttons
 
 #### Thursday June 1
 
-* Beta test with some friends and fix any bugs in basic event creation, attendee addition
-* Get pickier about security so that personal info (email, cell #) are not accessible to anyone outside of attendees leading up to each event
-* Get pickier about validation of data so that forms are intuitive to fill out & data is what we want/expect -- try to have drop-downs that you can also type in (like facebook events) for date and time of events
-* Try to create a photo cropper; display of images including zoom in/out to fit the UI -- things like cropping profile image into a square, having maximum upload size, cropping lettuce header image into a landscape rectangle (cover image style)
+* Add alert before deleting; “Are you sure you want to delete this event?” 
+* Create a way for attendees to sign up for each event and stop them once event is full
+* Security; make sure personal info (email, cell #) is not accessible to anyone outside of attendees leading up to each event
 
 #### Friday June 2
 
-* Try out Google Maps search for restaurant venues
-* Try out way to send email reminder to all attendees and/or text message reminder to all attendees
-* Most importantly, *don’t break the app before demos*
+* Validation of data; make forms are intuitive to fill out & data is what we want/expect -- add drop-downs calendar that you can also type in (like facebook events) for date and time of events
+* Try out Google Maps search for restaurant venues & maps API to display location
 * Final deploy
+
+#### Extras
+
+* Try to create a photo cropper; display of images including zoom in/out to fit the UI -- things like cropping profile image into a square, having maximum upload size, cropping lettuce header image into a landscape rectangle (cover image style)
+* Convert CSS to SCSS
+* Make layout with Flexbox rather than just 12 col grid
+* Add CSS animations & transitions for event display and buttons
+* Try out way to send email reminder to all attendees and/or text message reminder to all attendees
 
 ********
 

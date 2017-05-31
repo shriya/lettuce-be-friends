@@ -15,7 +15,7 @@ deeper green = #3D581A
 FONTS
 
 heading = 'Diavlo'
-text = 'Source Sans Pro'
+text = 'Roboto'
 
 */
 
@@ -37,7 +37,7 @@ body a {
 .container {
   padding: 0px;
   margin: 0px;
-  font-family: 'Source Sans Pro', sans-serif; 
+  font-family: 'Roboto', sans-serif; 
   font-size: 16px;
   color: #2E2F25;
   width: 100%;
@@ -47,8 +47,9 @@ body a {
   padding: 20px;
 }
 
-h1, h2, h3 {
-    font-family: 'Diavlo', sans-serif;
+button a:hover {
+  text-decoration: none
+  /*color: #2E2F25;*/
 }
 
 /* NAVBAR */
@@ -86,7 +87,6 @@ h1, h2, h3 {
 .nav-signup, .nav-login {
   border-radius: 5px;
   margin-left: 10px;
-  width: 90px;
   text-align: center;
 }
 
@@ -134,13 +134,25 @@ form p {
   padding: 5px;
 }
 
+/* EVENT CARDS */
 
+.event-card {
+  margin: 30px;
+  padding: 20px;
+  border: 3px solid #66932C;
+  border-radius: 15px;
+  background-color: #D2D5AA;
+}
 
+.event-host.pic {
+  height: 150px;
+}
 
+/* EVENT EDIT PG */
 
-
-
-
+.delete-btn, .view-all-btn {
+  margin-left: 10px;  
+}
 
 
 

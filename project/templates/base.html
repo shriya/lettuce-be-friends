@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -29,7 +29,7 @@
                 <li><a class="nav-signup" href="{{ url_for('users.signup') }}">Sign Up</a></li>
                 <li><a class="nav-login" href="{{ url_for('users.login') }}">Log In</a></li>
               {% else %}
-                {# <li><a href="{{ url_for('events.new', id=current_user.id) }}">New Event</a></li> #}
+                <li><a class="nav-signup" href="{{ url_for('events.new', u_id=current_user.id) }}">Create New Event</a></li>
                 <li><a class="nav-login" href="{{ url_for('users.logout') }}">Log out</a></li>
               {% endif %}
             </ul>
