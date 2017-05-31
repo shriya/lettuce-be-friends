@@ -15,15 +15,16 @@ A web application that lets people create healthy meal events to meet interestin
 
 #### Tuesday May 30
 
-* Set up Flask app with Users and Events resources, two sets of RESTful routes 
+* Set up Flask app with Users resource and RESTful routes **_(done)_**
 * Set up initial database migration **_(done)_**
-* Set up user log in & signup & log out
 * Basic styling with logo, splash image, font pairing, and color scheme **_(done)_**
 * Initial deploy to Heroku **_(done)_**
 * Add to Rithm repo **_(done)_**
 
 #### Wednesday May 31
 
+* Set up second resource Events with its RESTful routes 
+* Set up user log in & signup & log out **_(done)_**
 * Attendees list on Events objects (1:M relationship)
 * Create a way for attendees to sign up for each event and stop them once event is full
 * Convert CSS to SCSS

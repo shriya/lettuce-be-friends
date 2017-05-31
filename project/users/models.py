@@ -22,3 +22,4 @@ class User(db.Model, UserMixin):
         self.password = bcrypt.generate_password_hash(password).decode('UTF-8')
         self.phone_number = phone_number
         self.facebook_url = facebook_url
+        self.profile_img_url = profile_img_url

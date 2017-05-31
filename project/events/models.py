@@ -9,11 +9,10 @@ class Event(db.Model, UserMixin):
     date = db.Column(db.DateTime)
     location_name = db.Column(db.Text)
     location_address = db.Column(db.Text)
-    image_url = db.Column(db.Text)
     sold_out = db.Column(db.Boolean)
     host_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
-    def __init__(self, date, location_name, location_address, image_url='http://i.imgur.com/XFgD55n.jpg'):
+    def __init__(self, date, location_name, location_address):
         self.date = date
         self.location_name = location_name
         self.location_address = location_address

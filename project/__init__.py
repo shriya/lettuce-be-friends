@@ -16,7 +16,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or "it's a secret"
 
 modus = Modus(app)
 bcrypt = Bcrypt(app)
-# login_manager = LoginManager(app)
+login_manager = LoginManager(app)
 db = SQLAlchemy(app)
 
 from project.users.views import users_blueprint
@@ -27,9 +27,9 @@ from project.events.models import Event
 app.register_blueprint(users_blueprint, url_prefix='/users')
 app.register_blueprint(events_blueprint, url_prefix='/users/<int:u_id>/events')
 
-# @login_manager.user_loader
-# def load_user(id):
-#     return User.query.get(int(id))
+@login_manager.user_loader
+def load_user(id):
+    return User.query.get(int(id))
 
 @app.route('/')
 def root():
