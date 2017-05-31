@@ -16,9 +16,9 @@ A web application that lets people create healthy meal events to meet interestin
 #### Tuesday May 30
 
 * Set up Flask app with Users and Events resources, two sets of RESTful routes 
-* Set up database migration
+* Set up initial database migration **_(done)_**
 * Set up user log in & signup & log out
-* Basic styling with existing logo (above) and color scheme **_(done)_**
+* Basic styling with logo, splash image, font pairing, and color scheme **_(done)_**
 * Initial deploy to Heroku **_(done)_**
 * Add to Rithm repo **_(done)_**
 
@@ -34,7 +34,7 @@ A web application that lets people create healthy meal events to meet interestin
 
 * Beta test with some friends and fix any bugs in basic event creation, attendee addition
 * Get pickier about security so that personal info (email, cell #) are not accessible to anyone outside of attendees leading up to each event
-* Get pickier about validation of data so that forms are intuitive to fill out & data is what we want/expect
+* Get pickier about validation of data so that forms are intuitive to fill out & data is what we want/expect -- try to have drop-downs that you can also type in (like facebook events) for date and time of events
 * Try to create a photo cropper; display of images including zoom in/out to fit the UI -- things like cropping profile image into a square, having maximum upload size, cropping lettuce header image into a landscape rectangle (cover image style)
 
 #### Friday June 2
@@ -44,9 +44,15 @@ A web application that lets people create healthy meal events to meet interestin
 * Most importantly, *don’t break the app before demos*
 * Final deploy
 
-
 ********
 
-## Misc
+## Development Timeline
+
+* How to set up and run this app locally:
+    * (writing this up later)
+
+## Appendix
+
+* [Project Guidelines](https://github.com/rithmschool/fullstack_project) - Rithm School Week 5
 
 * Check out more details about plans for the app, questions, & progress [here](https://docs.google.com/document/d/1UcY4zTgfRUQolKyFGeEFAckOhiQEANiOMKMgdrafxm4/edit?usp=sharing)

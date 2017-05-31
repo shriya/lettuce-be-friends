@@ -20,12 +20,12 @@ bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 
 from project.users.views import users_blueprint
-# from project.events.views import events_blueprint
+from project.events.views import events_blueprint
 from project.users.models import User
-# from project.events.models import Event
+from project.events.models import Event
 
 app.register_blueprint(users_blueprint, url_prefix='/users')
-# app.register_blueprint(events_blueprint, url_prefix='/users/<int:id>/events')
+app.register_blueprint(events_blueprint, url_prefix='/users/<int:u_id>/events')
 
 # @login_manager.user_loader
 # def load_user(id):

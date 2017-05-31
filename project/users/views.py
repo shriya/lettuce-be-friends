@@ -45,15 +45,15 @@ def new():
     # is this needed anymore?
     pass
 
-@users_blueprint.route('/<int:id>/edit')
-def edit(id):
-    user = User.query.get(id)
+@users_blueprint.route('/<int:u_id>/edit')
+def edit(u_id):
+    user = User.query.get(u_id)
     form = UserForm(obj=user)
     return render_template('users/edit.html', form=form, user=user)
 
-@users_blueprint.route('/<int:id>', methods=['GET', 'PATCH', 'DELETE'])
-def show(id):
-    this_user = User.query.get(id)
+@users_blueprint.route('/<int:u_id>', methods=['GET', 'PATCH', 'DELETE'])
+def show(u_id):
+    this_user = User.query.get(u_id)
     if request.method == b"PATCH":
         form = UserForm(request.form)
         if form.validate():

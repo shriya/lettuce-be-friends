@@ -26,20 +26,25 @@ text = 'Source Sans Pro'
 
 /* SETTINGS FOR ALL CONTENT */
 
+body {
+  background-color: #EFEFE8;
+}
+
 body a {
     color: #66932C;
 }
 
-.main-content {
-    font-family: 'Source Sans Pro', sans-serif; 
-    font-size: 20px;
-    padding: 20px;
-    margin: 20px;
-    color: #2E2F25;
+.container {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-size: 16px;
+  color: #2E2F25;
+  width: 100%;
+}
 
-    /* ONLY FOR DEBUGGING */
-    width: 98%;
-    background-color: #D2D5AA;
+.inner-content {
+  padding: 20px;
 }
 
 h1, h2, h3 {
@@ -49,8 +54,8 @@ h1, h2, h3 {
 /* NAVBAR */
 
 .navbar {
-    background-color: #EFEFE8;
     margin-bottom: 0;
+    padding: 10px;
 }
 
 /* Center Brand */
@@ -78,7 +83,51 @@ h1, h2, h3 {
     }
 }
 
+.nav-signup, .nav-login {
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 90px;
+  text-align: center;
+}
 
+.nav-signup {
+  background-color: #66932C;
+  color: #EFEFE8;
+}
+
+.nav-signup:hover {
+  border: 1px solid #66932C;
+  color: #66932C;
+  height: 50px;
+}
+
+.nav-login {
+  border: 1px solid #66932C;
+  height: 50px;
+  margin-right: 30px;
+}
+
+/*THIS ONE ISN'T WORKING!! */
+
+.nav-login:hover {
+  background-color: #66932C;
+  color: #2E2F25;
+}
+
+/* SALAD HERO IMAGE */
+
+.salad-hero {
+    background-image: url("../images/salads.jpg");
+
+    /* Set a specific height */
+    height: 300px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 
 
