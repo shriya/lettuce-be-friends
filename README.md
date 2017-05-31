@@ -4,12 +4,16 @@ A web application that lets people create healthy meal events to meet interestin
 
 [Live Site @ https://lettuce-be-friends.herokuapp.com/](https://lettuce-be-friends.herokuapp.com/)
 
+********
+
 ## Technical Specifications
 
 * Flask application using SQLAlchemy for database management
-	* Implmeneted CRUD on User and Event resources with RESTful routing
+	* Implemented CRUD on User and Event resources with RESTful routing
 * Templates built with Jinja2 and HTML, with styling using Bootstrap and CSS
 * Password encryption done with Bcrypt
+
+********
 
 ## Development Timeline
 
@@ -35,13 +39,14 @@ A web application that lets people create healthy meal events to meet interestin
 
 #### Friday June 2
 
-* Validation of data; make forms are intuitive to fill out & data is what we want/expect -- add drop-downs calendar that you can also type in (like facebook events) for date and time of events
+* Validation of data; make forms more intuitive to fill out 
+* Add drop-downs calendar that you can also type in (like facebook events) for date and time of events
 * Try out Google Maps search for restaurant venues & maps API to display location
 * Final deploy
 
 #### Extras
 
-* Try to create a photo cropper; display of images including zoom in/out to fit the UI -- things like cropping profile image into a square, having maximum upload size, cropping lettuce header image into a landscape rectangle (cover image style)
+* Create a photo cropper for profile pictures to be a square with a maximum upload size
 * Convert CSS to SCSS
 * Make layout with Flexbox rather than just 12 col grid
 * Add CSS animations & transitions for event display and buttons
@@ -49,10 +54,10 @@ A web application that lets people create healthy meal events to meet interestin
 
 ********
 
-## Development Timeline
-
-* How to set up and run this app locally:
+## How to set up and run this app locally:
     * (writing this up later)
+
+********
 
 ## Appendix
 
