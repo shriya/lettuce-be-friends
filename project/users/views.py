@@ -26,7 +26,7 @@ def index():
     if request.method == "POST":
     # creating a new user; is this even necessary? 
         pass
-    return render_template('users/index.html')
+    return render_template('users/index.html', users=User.query.all())
 
 @users_blueprint.route('/signup', methods=['GET', 'POST'])
 def signup():

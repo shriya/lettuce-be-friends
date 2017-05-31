@@ -22,7 +22,7 @@ Edit Event
               </span>
             {% endfor %}
           {% endif %}
-          {{ form.date(value = event.date.strftime('%d/%m at %H:%M'), class="form-control") }}
+          {{ form.date(value = event.date.strftime('%d/%m %H:%M'), class="form-control") }}
         </p>
 
         <p>

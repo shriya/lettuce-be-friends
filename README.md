@@ -28,6 +28,7 @@ A web application that lets people create healthy meal events to meet interestin
 #### Wednesday May 31
 
 * Set up user log in & signup & log out **_(done)_**
+* Make favicon **_(done)_**
 * Set up second resource Events with its RESTful routes 
 * Attendees list on Events objects (1:M relationship)
 
@@ -55,7 +56,8 @@ A web application that lets people create healthy meal events to meet interestin
 ********
 
 ## How to set up and run this app locally:
-    * (writing this up later)
+
+* (writing this up later)
 
 ********
 

@@ -7,21 +7,22 @@ Index
 {% block content %}
     <div class="salad-hero"></div>
     <div class="inner-content">
-        <h1>Come to upcoming events!</h1>
+        <h1>Check out upcoming events</h1>
         <div class="all-events">
-            <p>Small batch disrupt tacos, lumbersexual mlkshk whatever knausgaard flannel. Iceland aesthetic portland adaptogen. Drinking vinegar aesthetic four dollar toast tumeric skateboard. Hella scenester 8-bit authentic, hexagon salvia cardigan crucifix meh DIY microdosing pour-over. Fixie polaroid synth activated charcoal mlkshk green juice. Direct trade brooklyn poke activated charcoal vexillologist butcher before they sold out street art iceland helvetica normcore ethical jean shorts you probably haven't heard of them occupy. Bicycle rights ennui roof party lumbersexual, fam marfa unicorn whatever scenester.</p>
-
-            <p>Small batch disrupt tacos, lumbersexual mlkshk whatever knausgaard flannel. Iceland aesthetic portland adaptogen. Drinking vinegar aesthetic four dollar toast tumeric skateboard. Hella scenester 8-bit authentic, hexagon salvia cardigan crucifix meh DIY microdosing pour-over. Fixie polaroid synth activated charcoal mlkshk green juice. Direct trade brooklyn poke activated charcoal vexillologist butcher before they sold out street art iceland helvetica normcore ethical jean shorts you probably haven't heard of them occupy. Bicycle rights ennui roof party lumbersexual, fam marfa unicorn whatever scenester.</p>
-
-            <p>Small batch disrupt tacos, lumbersexual mlkshk whatever knausgaard flannel. Iceland aesthetic portland adaptogen. Drinking vinegar aesthetic four dollar toast tumeric skateboard. Hella scenester 8-bit authentic, hexagon salvia cardigan crucifix meh DIY microdosing pour-over. Fixie polaroid synth activated charcoal mlkshk green juice. Direct trade brooklyn poke activated charcoal vexillologist butcher before they sold out street art iceland helvetica normcore ethical jean shorts you probably haven't heard of them occupy. Bicycle rights ennui roof party lumbersexual, fam marfa unicorn whatever scenester.</p>
-
-            <p>Small batch disrupt tacos, lumbersexual mlkshk whatever knausgaard flannel. Iceland aesthetic portland adaptogen. Drinking vinegar aesthetic four dollar toast tumeric skateboard. Hella scenester 8-bit authentic, hexagon salvia cardigan crucifix meh DIY microdosing pour-over. Fixie polaroid synth activated charcoal mlkshk green juice. Direct trade brooklyn poke activated charcoal vexillologist butcher before they sold out street art iceland helvetica normcore ethical jean shorts you probably haven't heard of them occupy. Bicycle rights ennui roof party lumbersexual, fam marfa unicorn whatever scenester.</p>
-
-            <p>Small batch disrupt tacos, lumbersexual mlkshk whatever knausgaard flannel. Iceland aesthetic portland adaptogen. Drinking vinegar aesthetic four dollar toast tumeric skateboard. Hella scenester 8-bit authentic, hexagon salvia cardigan crucifix meh DIY microdosing pour-over. Fixie polaroid synth activated charcoal mlkshk green juice. Direct trade brooklyn poke activated charcoal vexillologist butcher before they sold out street art iceland helvetica normcore ethical jean shorts you probably haven't heard of them occupy. Bicycle rights ennui roof party lumbersexual, fam marfa unicorn whatever scenester.</p>
-
-            <p>Small batch disrupt tacos, lumbersexual mlkshk whatever knausgaard flannel. Iceland aesthetic portland adaptogen. Drinking vinegar aesthetic four dollar toast tumeric skateboard. Hella scenester 8-bit authentic, hexagon salvia cardigan crucifix meh DIY microdosing pour-over. Fixie polaroid synth activated charcoal mlkshk green juice. Direct trade brooklyn poke activated charcoal vexillologist butcher before they sold out street art iceland helvetica normcore ethical jean shorts you probably haven't heard of them occupy. Bicycle rights ennui roof party lumbersexual, fam marfa unicorn whatever scenester.</p>
-            {# {% for event in events %}
-            {% endfor %} #}
+            {% for user in users %}
+                {% for event in user.events %}
+                    <div class="col-sm-3 event-card">
+                        <div class="event-host">
+                            <img src="{{ user.profile_img_url }}" alt="Profile Picture" class="img-responsive event-host-pic">
+                            <h4>{{ user.first_name }}</h4>
+                        </div>
+                        <h3 class="event-title">{{ event.date.strftime('%d/%m %H:%M') }}</h3>
+                        <h4 class="event-venue">{{ event.location_name }}</h4>
+                        <h5 class="event-address">{{ event.location_address }}</h5>
+                        <button class="btn btn-default"><a href="{{url_for('events.show', event=event, u_id=user.id, e_id=event.id)}}">Attend</a></button>
+                    </div>
+                {% endfor %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

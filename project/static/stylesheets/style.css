@@ -52,6 +52,10 @@ button a:hover {
   /*color: #2E2F25;*/
 }
 
+/*button:hover, .btn:hover, .btn-default:hover {
+  color: #2E2F25;
+}*/
+
 /* NAVBAR */
 
 .navbar {
