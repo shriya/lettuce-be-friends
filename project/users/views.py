@@ -15,7 +15,7 @@ users_blueprint = Blueprint(
 def ensure_correct_user(fn):
     @wraps(fn)
     def wrapper(*args, **kwargs):
-        if kwargs.get('id') != current_user.id:
+        if kwargs.get('u_id') != current_user.id:
             flash({'text': "Not Authorized", 'status': 'danger'})
             return redirect(url_for('root'))
         return fn(*args, **kwargs)
@@ -50,7 +50,6 @@ def signup():
                 db.session.commit()
                 login_user(new_user)
             except IntegrityError as e:
-                from IPython import embed; embed()
                 flash({'text': "Error", 'status':'danger'})
                 return render_template('users/signup.html', form=form)
         return redirect(url_for('root'))
@@ -101,9 +100,12 @@ def show(u_id):
                 this_user.first_name = form.first_name.data
                 this_user.last_name = form.last_name.data
                 this_user.email = form.email.data
-                this_user.phone_number = form.phone_number.data
-                this_user.facebook_url = form.facebook_url.data
-                this_user.profile_img_url = form.profile_img_url.data
+                if form.phone_number.data: 
+                    new_user.phone_number = form.phone_number.data
+                if form.facebook_url.data:
+                    new_user.facebook_url = form.facebook_url.data
+                if form.profile_img_url.data:
+                    new_user.profile_img_url = form.profile_img_url.data
                 db.session.add(this_user)
                 db.session.commit()
                 return redirect(url_for('users.show', id=id))
