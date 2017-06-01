@@ -64,7 +64,7 @@ def login():
                     login_user(found_user)
                     return redirect(url_for('root'))
             flash({ 'text': "User not found.", 'status': 'danger' })
-            return render_template('users/login.html', form=form)
+            return redirect(url_for('users.login'))
     return render_template('users/login.html', form=form)
 
 @users_blueprint.route('/logout', methods=['GET'])

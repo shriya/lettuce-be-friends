@@ -54,7 +54,6 @@ button a:hover {
 }
 
 .green-btn, .white-btn {
-  margin: 0px 10px 0px 10px;
   text-align: center;
   font-size: 14px;
 }
@@ -200,6 +199,7 @@ form p {
 
 .event-venue {
   font-size: 20px;
+  text-transform: lowercase;
   font-variant: small-caps;
 }
 
