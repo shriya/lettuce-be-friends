@@ -10,7 +10,7 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.Text)
     email = db.Column(db.Text, unique=True)
     password = db.Column(db.Text)
-    phone_number = db.Column(db.String(10), unique=True)
+    phone_number = db.Column(db.String(10))
     facebook_url = db.Column(db.Text)
     profile_img_url = db.Column(db.Text)
     events = db.relationship('Event', backref='host', lazy='dynamic')

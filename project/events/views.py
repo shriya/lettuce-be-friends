@@ -6,6 +6,7 @@ from project import db, bcrypt
 from sqlalchemy.exc import IntegrityError
 from flask_login import login_user, logout_user, current_user, login_required
 from functools import wraps
+from datetime import datetime
 
 events_blueprint = Blueprint(
   'events',
@@ -26,6 +27,7 @@ def index(u_id):
             return redirect(url_for('events.index', u_id=host.id))
         return render_template('events/new.html', form=form, u_id=host.id)
     events = host.events
+    # from IPython import embed; embed()
     return render_template('events/index.html', u_id=host.id, events=events, host=host)
 
 @events_blueprint.route('/new')
@@ -48,13 +50,13 @@ def show(u_id, e_id):
     if request.method == b"PATCH":
         form = EventForm(request.form)
         if form.validate():
-            event.date = request.form['date']
+            event.date = datetime.strptime(request.form['date'], '%d/%m %H:%M')
             event.location_name = request.form['location_name']
             event.location_address = request.form['location_address']
             event.host_id = u_id
             db.session.add(event)
             db.session.commit()
-            return redirect(url_for('events.index', u_id=u.id))
+            return redirect(url_for('events.index', u_id=host.id))
         return render_template('events/edit.html', form=form, u_id=host.id, host=host, e_id=event.id, event=event)
     if request.method == b"DELETE":
         db.session.delete(event)

@@ -44,13 +44,14 @@ def signup():
                     new_user.phone_number = form.phone_number.data
                 if form.facebook_url.data:
                     new_user.facebook_url = form.facebook_url.data
-                if form.profile_img_url:
+                if form.profile_img_url.data:
                     new_user.profile_img_url = form.profile_img_url.data
                 db.session.add(new_user)
                 db.session.commit()
                 login_user(new_user)
             except IntegrityError as e:
-                flask({'text': "Email already taken", 'status':'danger'})
+                from IPython import embed; embed()
+                flash({'text': "Error", 'status':'danger'})
                 return render_template('users/signup.html', form=form)
         return redirect(url_for('root'))
     return render_template('users/signup.html', form=form)
