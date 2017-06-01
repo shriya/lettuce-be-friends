@@ -21,11 +21,8 @@ def ensure_correct_user(fn):
         return fn(*args, **kwargs)
     return wrapper
 
-@users_blueprint.route('/', methods=['GET', 'POST'])
+@users_blueprint.route('/', methods=['GET'])
 def index():
-    if request.method == "POST":
-    # creating a new user; is this even necessary? 
-        pass
     return render_template('users/index.html', users=User.query.all())
 
 @users_blueprint.route('/signup', methods=['GET', 'POST'])
@@ -50,7 +47,7 @@ def signup():
                 db.session.commit()
                 login_user(new_user)
             except IntegrityError as e:
-                flash({'text': "Error", 'status':'danger'})
+                flash({'text': "Invalid input data", 'status':'danger'})
                 return render_template('users/signup.html', form=form)
         return redirect(url_for('root'))
     return render_template('users/signup.html', form=form)
@@ -66,7 +63,7 @@ def login():
                 if is_authenticated:
                     login_user(found_user)
                     return redirect(url_for('root'))
-            flash({'text': "Invalid credentials.", 'status': 'danger'})
+            flash({ 'text': "User not found.", 'status': 'danger' })
             return render_template('users/login.html', form=form)
     return render_template('users/login.html', form=form)
 
@@ -76,11 +73,6 @@ def logout():
     logout_user()
     flash({ 'text': "You have successfully logged out.", 'status': 'success' })
     return redirect(url_for('users.login'))
-
-@users_blueprint.route('/new')
-def new():
-    # is this needed anymore?
-    pass
 
 @users_blueprint.route('/<int:u_id>/edit')
 @login_required
@@ -101,22 +93,22 @@ def show(u_id):
                 this_user.last_name = form.last_name.data
                 this_user.email = form.email.data
                 if form.phone_number.data: 
-                    new_user.phone_number = form.phone_number.data
+                    this_user.phone_number = form.phone_number.data
                 if form.facebook_url.data:
-                    new_user.facebook_url = form.facebook_url.data
+                    this_user.facebook_url = form.facebook_url.data
                 if form.profile_img_url.data:
-                    new_user.profile_img_url = form.profile_img_url.data
+                    this_user.profile_img_url = form.profile_img_url.data
                 db.session.add(this_user)
                 db.session.commit()
-                return redirect(url_for('users.show', id=id))
-            flash({ 'text': "Wrong password, please try again.", 'status': 'danger'})
+                return redirect(url_for('users.show', u_id=this_user.id))
         return render_template('users/edit.html', form=form, user=this_user)
     if request.method == b"DELETE":
         logout_user()
         db.session.delete(this_user)
         db.session.commit()
-        return redirect(url_for('users.index'))
-    return render_template('users/show.html', user=this_user)
+        flash({ 'text': "You have successfully deleted your account.", 'status': 'success' })
+        return redirect(url_for('users.signup'))
+    return render_template('users/index.html', users=User.query.all())
 
 
 

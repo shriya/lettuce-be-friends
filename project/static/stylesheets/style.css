@@ -195,6 +195,7 @@ form p {
 .event-host-pic {
   height: 100px;
   width: 100px;
+  border-radius: 3px;
 }
 
 .event-venue {

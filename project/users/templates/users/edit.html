@@ -8,7 +8,7 @@ Edit Account
     <div class="inner-content">
         <div class="row">
             <div class="col-sm-4 col-sm-offset-4">
-                <form method="POST" action="{{ url_for('users.index', u_id = current_user.id) }}?_method=PATCH">
+                <form method="POST" action="{{ url_for('users.show', u_id = current_user.id) }}?_method=PATCH">
                     <h1>Update Information</h1>
                     {{ form.csrf_token }}
                     <p>
@@ -91,7 +91,7 @@ Edit Account
                       <button type="submit" class="btn btn-default green-btn">Update Info</button>
                 </form>
                 <br>
-                <form method="POST" action="{{url_for('users.index', u_id=current_user.id)}}?_method=DELETE">
+                <form method="POST" action="{{url_for('users.show', u_id=current_user.id)}}?_method=DELETE">
                   <input class="btn btn-danger delete-btn" type="submit" value="Delete my account">    
                 </form>
              </div>
