@@ -61,5 +61,5 @@ def show(u_id, e_id):
     if request.method == b"DELETE":
         db.session.delete(event)
         db.session.commit()
-        return redirect(url_for('events.index', u_id=u.id))
+        return redirect(url_for('events.index', u_id=host.id))
     return render_template('events/show.html', event=event, e_id=event.id, u_id=host.id, host=host)

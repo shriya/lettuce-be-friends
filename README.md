@@ -29,12 +29,12 @@ A web application that lets people create healthy meal events to meet interestin
 
 * Set up user log in & signup & log out **_(done)_**
 * Make favicon **_(done)_**
-* Set up second resource Events with its RESTful routes 
-* Attendees list on Events objects (1:M relationship)
+* Set up second resource Events with its RESTful routes **_(done)_**
 
 #### Thursday June 1
 
 * Add alert before deleting; “Are you sure you want to delete this event?” 
+* Attendees list on Events objects (1:M relationship)
 * Create a way for attendees to sign up for each event and stop them once event is full
 * Security; make sure personal info (email, cell #) is not accessible to anyone outside of attendees leading up to each event
 

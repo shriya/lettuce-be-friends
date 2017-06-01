@@ -88,9 +88,14 @@ Edit Account
                       {{ form.profile_img_url(placeholder="Profile Image URL", class="form-control") }}
                     </p>
 
-                      <button type="submit" class="btn btn-default nav-signup">Update Info</button>
+                      <button type="submit" class="btn btn-default green-btn">Update Info</button>
+                </form>
+                <br>
+                <form method="POST" action="{{url_for('users.index', u_id=current_user.id)}}?_method=DELETE">
+                  <input class="btn btn-danger delete-btn" type="submit" value="Delete my account">    
                 </form>
              </div>
         </div>
     </div>
 {% endblock %}
+

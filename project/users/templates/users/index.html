@@ -8,18 +8,20 @@ Index
     <div class="salad-hero"></div>
     <div class="inner-content">
         <h1>Check out upcoming events</h1>
-        <div class="all-events">
+        <div class="all-events row">
             {% for user in users %}
                 {% for event in user.events %}
-                    <div class="col-sm-3 event-card">
-                        <div class="event-host">
-                            <img src="{{ user.profile_img_url }}" alt="Profile Picture" class="img-responsive event-host-pic">
-                            <h4>{{ user.first_name }}</h4>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="event-card">
+                            <div class="event-host">
+                                <img src="{{ user.profile_img_url }}" alt="Profile Picture" class="img-responsive event-host-pic">
+                                <h4>{{ user.first_name }}</h4>
+                            </div>
+                            <h3 class="event-title">{{ event.date.strftime('%d/%m %H:%M') }}</h3>
+                            <h4 class="event-venue">{{ event.location_name }}</h4>
+                            <h5 class="event-address"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;{{ event.location_address }}</h5>
+                            <button class="btn event-btn"><a href="{{url_for('events.show', event=event, u_id=user.id, e_id=event.id)}}">Attend</a></button>
                         </div>
-                        <h3 class="event-title">{{ event.date.strftime('%d/%m %H:%M') }}</h3>
-                        <h4 class="event-venue">{{ event.location_name }}</h4>
-                        <h5 class="event-address">{{ event.location_address }}</h5>
-                        <button class="btn btn-default"><a href="{{url_for('events.show', event=event, u_id=user.id, e_id=event.id)}}">Attend</a></button>
                     </div>
                 {% endfor %}
             {% endfor %}

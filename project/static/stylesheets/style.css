@@ -27,6 +27,7 @@ text = 'Roboto'
 /* SETTINGS FOR ALL CONTENT */
 
 body {
+  margin-top: 70px;
   background-color: #EFEFE8;
 }
 
@@ -52,6 +53,27 @@ button a:hover {
   /*color: #2E2F25;*/
 }
 
+.green-btn, .white-btn {
+  margin: 0px 10px 0px 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.green-btn {
+  background-color: #66932C;
+  color: #EFEFE8;
+  border: 1px solid #66932C;
+}
+
+.green-btn:hover {
+  border: 1px solid #66932C;
+  color: #66932C;
+}
+
+.white-btn {
+  border: 1px solid #66932C;
+}
+
 /*button:hover, .btn:hover, .btn-default:hover {
   color: #2E2F25;
 }*/
@@ -59,8 +81,14 @@ button a:hover {
 /* NAVBAR */
 
 .navbar {
-    margin-bottom: 0;
-    padding: 10px;
+  margin-bottom: 0;
+  padding: 10px;
+  color: #66932C;
+  /*box-shadow: 0px 2px 5px #ABB2B9;*/
+}
+
+.navbar .container li a {
+  color: #66932C;
 }
 
 /* Center Brand */
@@ -88,33 +116,42 @@ button a:hover {
     }
 }
 
-.nav-signup, .nav-login {
-  border-radius: 5px;
+.navbar .container .nav-signup, .navbar .container .nav-login {
+/*  border-radius: 40px;*/
   margin: 0px 10px 0px 10px;
   text-align: center;
   font-size: 14px;
 }
 
-.nav-signup {
+.navbar .container .nav-signup {
   background-color: #66932C;
   color: #EFEFE8;
   border: 1px solid #66932C;
 }
 
-.nav-signup:hover {
+.navbar .container .nav-signup:hover {
   border: 1px solid #66932C;
   color: #66932C;
 }
 
-.nav-login {
+.navbar .container .nav-login {
   border: 1px solid #66932C;
 }
 
-/*THIS ONE ISN'T WORKING!! */
-
-.nav-login:hover {
+.navbar .container .nav-login:hover {
   background-color: #66932C;
   color: #2E2F25;
+}
+
+/* NOT WORKING:; */
+.navbar .container .nav-login a:hover {
+  background-color: #66932C;
+  color: #F8F8F8;
+}
+
+/* NOT WORKING:; */
+.navbar-toggle, .collapsed {
+  color: #66932C;
 }
 
 /* SALAD HERO IMAGE */
@@ -140,17 +177,48 @@ form p {
 
 /* EVENT CARDS */
 
+.row {
+  margin: 0 auto;
+}
+
 .event-card {
-  margin: 30px;
+  margin-bottom: 30px;
   padding: 20px;
-  border: 3px solid #66932C;
-  border-radius: 15px;
-  background-color: #D2D5AA;
+  border: .5px solid #66932C;
+  border-radius: 3px;
+  background-color: #F8F8F8;
+
+  /* horiz-dist, vert-dist, blur-dist, color */
+  box-shadow: 3px 3px #DEDEDD;
 }
 
 .event-host-pic {
   height: 100px;
   width: 100px;
+}
+
+.event-venue {
+  font-size: 20px;
+  font-variant: small-caps;
+}
+
+.event-btn {
+  background-color: #66932C;
+  border: 1px solid #66932C;
+}
+
+.event-btn a {
+  color: #F8F8F8;
+}
+
+.event-btn:hover {
+  border: 1px solid #66932C;
+  background-color: #F8F8F8;
+  color: #66932C;
+}
+
+.event-btn a:hover {
+  color: #66932C;
 }
 
 /* EVENT EDIT PG */

@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-static-top my-nav">
+    <nav class="navbar navbar-default navbar-fixed-top my-nav">
         <div class="container">
 
           <div class="navbar-header">
@@ -29,19 +29,19 @@
             <ul class="nav navbar-nav navbar-left">
               {% if current_user.is_anonymous %}
               {% else %}
-                <li><a class="nav-signup" href="{{ url_for('events.new', u_id=current_user.id) }}">Create New Event</a></li>
-                <li><a class="nav-login" href="{{ url_for('events.index', u_id=current_user.id) }}">View My Events</a></li>
+                <li><a class="btn nav-signup" href="{{ url_for('events.new', u_id=current_user.id) }}">Create New Event</a></li>
+                <li><a class="btn nav-login" href="{{ url_for('events.index', u_id=current_user.id) }}">View My Events</a></li>
               {% endif %}
             </ul>
             
             <ul class="nav navbar-nav navbar-right">
 
               {% if current_user.is_anonymous %}
-                <li><a class="nav-signup" href="{{ url_for('users.signup') }}">Sign Up</a></li>
-                <li><a class="nav-login" href="{{ url_for('users.login') }}">Log In</a></li>
+                <li><a class="btn nav-signup" href="{{ url_for('users.signup') }}">Sign Up</a></li>
+                <li><a class="btn nav-login" href="{{ url_for('users.login') }}">Log In</a></li>
               {% else %}
-                <li><a class="nav-login" href="{{ url_for('users.edit', u_id=current_user.id) }}">Edit My Profile</a></li>
-                <li><a class="nav-login" href="{{ url_for('users.logout') }}">Log out</a></li>
+                <li><a class="btn nav-login" href="{{ url_for('users.edit', u_id=current_user.id) }}">Edit My Profile</a></li>
+                <li><a class="btn nav-login" href="{{ url_for('users.logout') }}">Log out</a></li>
               {% endif %}
             </ul>
           </div>

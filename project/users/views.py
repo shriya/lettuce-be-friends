@@ -112,6 +112,7 @@ def show(u_id):
             flash({ 'text': "Wrong password, please try again.", 'status': 'danger'})
         return render_template('users/edit.html', form=form, user=this_user)
     if request.method == b"DELETE":
+        logout_user()
         db.session.delete(this_user)
         db.session.commit()
         return redirect(url_for('users.index'))
