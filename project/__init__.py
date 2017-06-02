@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL') or 'postgres://localhost/lettuce_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# app.config['SQLALCHEMY_ECHO'] = False
+app.config['SQLALCHEMY_ECHO'] = True
 # app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or "it's a secret"
 
@@ -20,11 +20,15 @@ db = SQLAlchemy(app)
 
 from project.users.views import users_blueprint
 from project.events.views import events_blueprint
+from project.tickets.views import tickets_blueprint
+
 from project.users.models import User
 from project.events.models import Event
+from project.tickets.models import Ticket
 
 app.register_blueprint(users_blueprint, url_prefix='/users')
 app.register_blueprint(events_blueprint, url_prefix='/users/<int:u_id>/events')
+app.register_blueprint(tickets_blueprint, url_prefix='/tickets') 
 
 @login_manager.user_loader
 def load_user(id):

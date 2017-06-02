@@ -1,7 +1,8 @@
 from flask import redirect, render_template, request, url_for, Blueprint, flash
 from project.users.models import User
 from project.users.forms import UserForm, LoginForm
-from project.events.models import Event, Association
+from project.events.models import Event
+from project.tickets.models import Ticket
 from project import db, bcrypt
 from sqlalchemy.exc import IntegrityError
 from flask_login import login_user, logout_user, current_user, login_required
@@ -28,7 +29,7 @@ def index():
 
 @users_blueprint.route('/signup', methods=['GET', 'POST'])
 def signup():
-    form = UserForm()
+    form = UserForm(request.form)
     if request.method == "POST":
         if form.validate():
             try: 
@@ -47,6 +48,7 @@ def signup():
                 db.session.add(new_user)
                 db.session.commit()
                 login_user(new_user)
+                return redirect(url_for('root'))
             except IntegrityError as e:
                 flash({'text': "Invalid input data", 'status':'danger'})
                 return render_template('users/signup.html', form=form)

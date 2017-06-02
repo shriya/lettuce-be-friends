@@ -35,6 +35,14 @@ body a {
     color: #66932C;
 }
 
+h1 {
+  color: #66932C;
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 .container {
   padding: 0px;
   margin: 0px;

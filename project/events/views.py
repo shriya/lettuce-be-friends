@@ -1,7 +1,8 @@
 from flask import redirect, render_template, request, url_for, Blueprint, flash
 from project.users.models import User
-from project.events.models import Event, Association
+from project.events.models import Event
 from project.events.forms import EventForm
+from project.tickets.models import Ticket
 from project import db, bcrypt
 from sqlalchemy.exc import IntegrityError
 from flask_login import login_user, logout_user, current_user, login_required
@@ -24,8 +25,8 @@ def index(u_id):
             host.events.append(new_event)
             db.session.add(host)
             db.session.commit()
-            attendees = Association(user_id=u_id, event_id=new_event.id, is_host=True)
-            db.session.add_all([attendees,new_event])
+            ticket = Ticket(user_id=u_id, event_id=new_event.id, is_host=True)
+            db.session.add(ticket)
             db.session.commit()
             return redirect(url_for('events.index', u_id=host.id))
         return render_template('events/new.html', form=form, u_id=host.id)
@@ -57,7 +58,7 @@ def show(u_id, e_id):
             event.location_address = request.form['location_address']
             db.session.add(event)
             db.session.commit()
-            attendees = Association(user_id=u_id, event_id=event.id, is_host=True)
+            attendees = Ticket(user_id=u_id, event_id=event.id, is_host=True)
             db.session.add(event)
             db.session.commit()
             return redirect(url_for('events.index', u_id=host.id))
@@ -67,3 +68,9 @@ def show(u_id, e_id):
         db.session.commit()
         return redirect(url_for('events.index', u_id=host.id))
     return render_template('events/show.html', event=event, e_id=event.id, u_id=host.id, host=host)
+
+
+
+
+
+
