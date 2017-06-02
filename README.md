@@ -35,31 +35,28 @@ A web application that lets people create healthy meal events to meet interestin
 #### Thursday June 1
 
 * Complete second resource Events with remaining RESTful routes (PATCH & DELETE) **_(done)_**
-* Event Card Styling
+* Event Card Styling **_(done)_**
     * Space out event cards using 12-col grid and gutters **_(done)_**
     * Add box shadow with hover effect **_(done)_**
-    * Date & Time display 
-        * convert date like “06/02” to “June 2” **_(done)_**
-        * add am/pm 
-        * automatically display end time 
-        * add bootstrap datepicker to new & edit forms
-* Mobile UI Styling
-    * collapsed navbar wider breakpoint to fit buttons **_(done)_**
-    * change sandwich menu color to match color scheme **_(done)_**
-    * increase font size and button size so they are clickable on small screen 
-* Attendees list on Events objects (1:M relationship)
-* Add alert before deleting; “Are you sure you want to delete this event/user?” 
+    * Convert date like “06/02” to “June 2” **_(done)_**
+* Mobile - change sandwich menu color to match color scheme **_(done)_**
+* Attendees list on Events objects (1:M relationship) **_(done)_**
 
 #### Friday June 2
-
-* Validation of data; make forms more intuitive to fill out 
+ 
 * Create a way for attendees to sign up for each event and stop them once event is full
-* Security; make sure personal info (email, cell #) is not accessible to anyone outside of attendees leading up to each event
-* Add Google Maps search for restaurant venues & maps API to display location
-* Final deploy
+* Date & Time display 
+    * add am/pm 
+    * automatically display end time 
+    * add bootstrap datepicker to new & edit forms
+* Mobile UI Styling
+    * increase font size and button size so they are clickable on small screen
+* Add alert before deleting; “Are you sure you want to delete this event/user?” 
 
 #### Extras
 
+* Security; make sure personal info (email, cell #) is not accessible to anyone outside of attendees leading up to each event
+* Add Google Maps search for restaurant venues & maps API to display location
 * Create a photo cropper for profile pictures to be a square with a maximum upload size
 * Convert CSS to SCSS
 * Make layout with Flexbox rather than just 12 col grid
