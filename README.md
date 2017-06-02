@@ -68,6 +68,7 @@ A web application that lets people create healthy meal events to meet interestin
     * Display events you're hosting vs. attending differently
     * Have maximum RSVP count per event and stop it when it hits that
 * Date & Time display 
+    * sort cards in index pages by date (soonest first)
     * add am/pm 
     * automatically display end time 
     * add bootstrap datepicker to new & edit forms
