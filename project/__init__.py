@@ -36,6 +36,7 @@ def load_user(id):
 
 @app.route('/')
 def root():
+    
     return render_template('users/index.html', users=User.query.all(), events=Event.query.all())
 
 @app.after_request

@@ -62,23 +62,28 @@ A web application that lets people create healthy meal events to meet interestin
 
 ********
 
-## Things I Want to Add 
+## Things I Want to Add / Change
 
+* Data
+    * Display events you're hosting vs. attending differently
+    * Have maximum RSVP count per event and stop it when it hits that
 * Date & Time display 
     * add am/pm 
     * automatically display end time 
     * add bootstrap datepicker to new & edit forms
-* Mobile UI Styling
-    * increase font size and button size so they are clickable on small screen
-* Add alert before deleting; “Are you sure you want to delete?” 
-* Have maximum RSVP count per event and stop it when it hits that
-* Security; make sure personal info (email, cell #) is not accessible to anyone outside of attendees leading up to each event
-* Add Google Maps search for restaurant venues & maps API to display location
-* Create a photo cropper for profile pictures to be a square with a maximum upload size
-* Convert CSS to SCSS
-* Make layout with Flexbox rather than just 12 col grid
-* Add CSS animations & transitions for event display and buttons
-* Try out way to send email reminder to all attendees and/or text message reminder to all attendees
+* CSS
+    * increase font size and button size on mobile so they are clickable on small screen
+    * Convert CSS to SCSS
+    * Make layout with Flexbox rather than just 12 col grid
+    * Add CSS animations & transitions for event display and buttons
+* Polish
+    * Add alert before deleting; “Are you sure you want to delete?” 
+    * Security; make sure personal info (email, cell #) is not accessible to anyone outside of attendees leading up to each event
+* Features
+    * Add Google Maps search for restaurant venues & maps API to display location
+    * Create a photo cropper for profile pictures to be a square with a maximum upload size
+    * Try out way to send email reminder to all attendees and/or text message reminder to all attendees
+    * Facebook login!!!!!
 
 ********
 
