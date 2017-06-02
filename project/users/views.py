@@ -1,6 +1,7 @@
 from flask import redirect, render_template, request, url_for, Blueprint, flash
 from project.users.models import User
 from project.users.forms import UserForm, LoginForm
+from project.events.models import Event, Association
 from project import db, bcrypt
 from sqlalchemy.exc import IntegrityError
 from flask_login import login_user, logout_user, current_user, login_required
@@ -23,7 +24,7 @@ def ensure_correct_user(fn):
 
 @users_blueprint.route('/', methods=['GET'])
 def index():
-    return render_template('users/index.html', users=User.query.all())
+    return render_template('users/index.html', users=User.query.all(), events=Event.query.all())
 
 @users_blueprint.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -108,7 +109,7 @@ def show(u_id):
         db.session.commit()
         flash({ 'text': "You have successfully deleted your account.", 'status': 'success' })
         return redirect(url_for('users.signup'))
-    return render_template('users/index.html', users=User.query.all())
+    return render_template('users/index.html', users=User.query.all(), events=Event.query.all())
 
 
 

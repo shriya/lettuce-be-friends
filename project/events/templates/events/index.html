@@ -7,15 +7,17 @@
 
         <div class="row">
             {% for event in events %}
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="event-card">
-                        <div class="event-host">
-                            <img src="{{ event.host.profile_img_url }}" alt="Profile Picture" class="img-responsive event-host-pic">
-                            <h4>{{ event.host.first_name }}</h4>
+                        <div class="row">
+                            <div class="event-host">
+                                <img src="{{ host.profile_img_url }}" alt="Profile Picture" class="img-responsive event-host-pic">
+                                <p>{{ host.first_name }}</p>
+                            </div>
+                            <p class="event-time">{{ event.date.strftime('%B %d, 2017') }} <br> {{ event.date.strftime('%H:%M') }}</p>
                         </div>
-                        <h3 class="event-title">{{ event.date.strftime('%d/%m at %H:%M') }}</h3>
-                        <h4 class="event-venue">{{ event.location_name }}</h4>
-                        <h5 class="event-address"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;{{ event.location_address }}</h5>
+                        <p class="event-venue">{{ event.location_name }}</p>
+                        <p class="event-address"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;{{ event.location_address }}</p>
                         <button class="btn btn-default white-btn"><a href="{{url_for('events.edit', u_id=host.id, e_id=event.id)}}">Edit Event</a></button>
                     </div>
                 </div>

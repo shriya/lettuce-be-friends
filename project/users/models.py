@@ -13,7 +13,8 @@ class User(db.Model, UserMixin):
     phone_number = db.Column(db.String(10))
     facebook_url = db.Column(db.Text)
     profile_img_url = db.Column(db.Text)
-    events = db.relationship('Event', backref='host', lazy='dynamic')
+    events = db.relationship("Event", backref='user')
+    association_events = db.relationship("Association", back_populates="association_attendee")
 
     def __init__(self, first_name, last_name, email, password, phone_number='555-555-5555', facebook_url='https://www.facebook.com/', profile_img_url='http://i.imgur.com/C86jBp4.png'):
         self.first_name = first_name

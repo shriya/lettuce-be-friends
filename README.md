@@ -29,22 +29,33 @@ A web application that lets people create healthy meal events to meet interestin
 
 * Set up user log in & signup & log out **_(done)_**
 * Make favicon **_(done)_**
-* Set up second resource Events with its RESTful routes **_(half-done)_**
+* Create event cards **_(done)_**
+* Set up second resource Events with initial RESTful routes (GET & POST - index, new, & edit) **_(done)_**
 
 #### Thursday June 1
 
-* Space out event cards using 12-col grid and gutters **_(done)_**
-* Set up second resource Events with its RESTful routes **_(second-half-done)_**
-* Add alert before deleting; “Are you sure you want to delete this event/user?” 
+* Complete second resource Events with remaining RESTful routes (PATCH & DELETE) **_(done)_**
+* Event Card Styling
+    * Space out event cards using 12-col grid and gutters **_(done)_**
+    * Add box shadow with hover effect **_(done)_**
+    * Date & Time display 
+        * convert date like “06/02” to “June 2” **_(done)_**
+        * add am/pm 
+        * automatically display end time 
+        * add bootstrap datepicker to new & edit forms
+* Mobile UI Styling
+    * collapsed navbar wider breakpoint to fit buttons **_(done)_**
+    * change sandwich menu color to match color scheme **_(done)_**
+    * increase font size and button size so they are clickable on small screen 
 * Attendees list on Events objects (1:M relationship)
-* Create a way for attendees to sign up for each event and stop them once event is full
-* Security; make sure personal info (email, cell #) is not accessible to anyone outside of attendees leading up to each event
+* Add alert before deleting; “Are you sure you want to delete this event/user?” 
 
 #### Friday June 2
 
 * Validation of data; make forms more intuitive to fill out 
-* Add drop-downs calendar that you can also type in (like facebook events) for date and time of events
-* Try out Google Maps search for restaurant venues & maps API to display location
+* Create a way for attendees to sign up for each event and stop them once event is full
+* Security; make sure personal info (email, cell #) is not accessible to anyone outside of attendees leading up to each event
+* Add Google Maps search for restaurant venues & maps API to display location
 * Final deploy
 
 #### Extras
