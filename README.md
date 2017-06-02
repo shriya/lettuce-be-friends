@@ -43,15 +43,7 @@ A web application that lets people create healthy meal events to meet interestin
 
 #### Friday June 2
  
-* Attendees list on Events objects (1:M relationship) **_(done)_**
-* Create a way for attendees to sign up for each event
-* Date & Time display 
-    * add am/pm 
-    * automatically display end time 
-    * add bootstrap datepicker to new & edit forms
-* Mobile UI Styling
-    * increase font size and button size so they are clickable on small screen
-* Add alert before deleting; “Are you sure you want to delete?” 
+* Attendees list on Events objects (1:M relationship) **_(working on it)_**
 
 ********
 
@@ -72,6 +64,13 @@ A web application that lets people create healthy meal events to meet interestin
 
 ## Things I Want to Add 
 
+* Date & Time display 
+    * add am/pm 
+    * automatically display end time 
+    * add bootstrap datepicker to new & edit forms
+* Mobile UI Styling
+    * increase font size and button size so they are clickable on small screen
+* Add alert before deleting; “Are you sure you want to delete?” 
 * Have maximum RSVP count per event and stop it when it hits that
 * Security; make sure personal info (email, cell #) is not accessible to anyone outside of attendees leading up to each event
 * Add Google Maps search for restaurant venues & maps API to display location
