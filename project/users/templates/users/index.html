@@ -9,6 +9,9 @@
         {% else %}
             <h1>No upcoming Events</h1>
             <br>
+            <!-- You need an if statement here to check if you're logged in,
+                 or you could redirect to a different page if the user isn't
+                 logged in -->
             <a class="btn btn-default green-btn" href="{{ url_for('events.new', u_id=current_user.id) }}">Create New Event</a>
         {% endif %}
         <div class="all-events row">

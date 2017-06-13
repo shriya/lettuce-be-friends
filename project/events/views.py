@@ -20,6 +20,7 @@ def index(u_id):
     host = User.query.get(u_id)
     if request.method == "POST":
         form = EventForm(request.form)
+        import IPython; IPython.embed()
         if form.validate():
             new_event = Event(request.form['date'], request.form['location_name'], request.form['location_address'])
             host.events.append(new_event)
@@ -68,9 +69,3 @@ def show(u_id, e_id):
         db.session.commit()
         return redirect(url_for('events.index', u_id=host.id))
     return render_template('events/show.html', event=event, e_id=event.id, u_id=host.id, host=host)
-
-
-
-
-
-
