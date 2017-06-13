@@ -4,6 +4,9 @@ A web application that lets people create healthy meal events to meet interestin
 
 [Live Site @ https://lettuce-be-friends.herokuapp.com/](https://lettuce-be-friends.herokuapp.com/)
 
+###
+# DO NOT FORGET SETUP INSTRUCTIONS
+###
 ********
 
 ## Technical Specifications
@@ -42,7 +45,7 @@ A web application that lets people create healthy meal events to meet interestin
 * Mobile - change sandwich menu color to match color scheme **_(done)_**
 
 #### Friday June 2
- 
+
 * Attendees list on Events objects (1:M relationship) **_(working on it)_**
 
 ********
@@ -52,7 +55,7 @@ A web application that lets people create healthy meal events to meet interestin
 #### Biggest Challenges
 
 * Setting up the relationships between event hosts, events, and event attendees
-* Minimizing duplication of CSS & templates & routes; I did not minimize it but I "tried" 
+* Minimizing duplication of CSS & templates & routes; I did not minimize it but I "tried"
 
 #### Biggest Wins
 
@@ -67,10 +70,10 @@ A web application that lets people create healthy meal events to meet interestin
 * Data
     * Display events you're hosting vs. attending differently
     * Have maximum RSVP count per event and stop it when it hits that
-* Date & Time display 
+* Date & Time display
     * sort cards in index pages by date (soonest first)
-    * add am/pm 
-    * automatically display end time 
+    * add am/pm
+    * automatically display end time
     * add bootstrap datepicker to new & edit forms
 * CSS
     * increase font size and button size on mobile so they are clickable on small screen
@@ -78,7 +81,7 @@ A web application that lets people create healthy meal events to meet interestin
     * Make layout with Flexbox rather than just 12 col grid
     * Add CSS animations & transitions for event display and buttons
 * Polish
-    * Add alert before deleting; “Are you sure you want to delete?” 
+    * Add alert before deleting; “Are you sure you want to delete?”
     * Security; make sure personal info (email, cell #) is not accessible to anyone outside of attendees leading up to each event
 * Features
     * Add Google Maps search for restaurant venues & maps API to display location
